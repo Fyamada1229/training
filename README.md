@@ -1,2 +1,2 @@
-# training
-Java学習
+# Java学習
+IDEはEclipseを使っています。
