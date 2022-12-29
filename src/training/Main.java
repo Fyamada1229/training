@@ -1,20 +1,29 @@
 package training;
 
 import java.util.Random;
+import java.util.regex.Pattern;
 
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(training03(args[0]));
+		// argeには2が入っている
+		training03(args[0]);
 	}
 	
 	public static String training03(String result) {
-		
-		//System.out.println(getComputer());
-		
+		// 正規表現で整数で数値を入れる。そこから比較をして、判定をする関数を作る。
+		boolean intResult = false;
+	    if (result != null) {
+	        Pattern pattern = Pattern.compile("^[0-9]+$");
+	        intResult = pattern.matcher(result).matches();
+	        if (intResult == false) {
+	            System.out.println("数字以外の値が入っています。0,2,5のどれかを入力して下さい。");
+	        }
+	    }
+	    
+	    
 		return result;
 	}
-	
 	
 	public static String getComputer() {
 		// 乱数の準備
@@ -31,6 +40,6 @@ public class Main {
 		String strChangeRand = i.toString();
 		// 0,2,5のどれかを、メソッドの結果として返す
 		return strChangeRand;
-		}
+	}
 
 }
