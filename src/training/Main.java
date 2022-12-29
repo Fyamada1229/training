@@ -11,7 +11,7 @@ public class Main {
 	}
 	
 	public static String training03(String result) {
-		// 正規表現で整数で数値を入れる。そこから比較をして、判定をする関数を作る。
+		// 数字のみ判定する
 		boolean intResult = false;
 	    if (result != null) {
 	        Pattern pattern = Pattern.compile("^[0-9]+$");
@@ -20,6 +20,16 @@ public class Main {
 	            System.out.println("数字以外の値が入っています。0,2,5のどれかを入力して下さい。");
 	        }
 	    }
+	    
+	    // 文字列以外が入ってきている場合の判定
+	    Comparable num = Integer.valueOf(1);
+	    
+	    if (result instanceof String != true && num instanceof Number) {
+	    	System.out.println("整数が入っています。");
+	    }
+
+	    System.out.println(result instanceof String); // → true
+	    
 	    
 	    
 		return result;
