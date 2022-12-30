@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Main {
 
 	public static void main(String[] args) {
-		// argeには2が入っている
-		training03(args[0]);
+		// argeには0が入っている
+		System.out.println(training03(args[0]));
 	}
 	
 	public static String training03(String result) {
@@ -22,20 +22,31 @@ public class Main {
 	    }
 	    
 	    // 文字列以外が入ってきている場合の判定
-	    Comparable num = Integer.valueOf(1);
-	    
-	    if (result instanceof String != true && num instanceof Number) {
+	    Comparable<?> num = Integer.valueOf(1);
+	    if (result instanceof String == false && num instanceof Number) {
 	    	System.out.println("整数が入っています。");
 	    }
+	    
+	    int cpu = getComputer();
+	    System.out.println(result);
+	    System.out.println(cpu);
+	    
+	    // resultを整数にして比較する
+	    int changeNumResult = Integer.parseInt(result);	 
+	    
+	    // 条件 0 グー, 2チョキー, 5パー
+		if(changeNumResult == 0 && cpu == 2 || changeNumResult == 2 && cpu == 5 || changeNumResult == 5 && cpu == 0) {
+			result="勝ち";
+			}else if(changeNumResult == 0 && cpu == 0 || changeNumResult == 2 && cpu == 2 || changeNumResult == 5 && cpu == 5) {
+			result="あいこ";
+			}else {
+			result="まけ";
+			}
 
-	    System.out.println(result instanceof String); // → true
-	    
-	    
-	    
 		return result;
 	}
 	
-	public static String getComputer() {
+	public static int getComputer() {
 		// 乱数の準備
 		Random rand = new Random();
 		int changeRand = rand.nextInt(5);
@@ -46,10 +57,8 @@ public class Main {
 				break;
 			}
 		}
-		Integer i = Integer.valueOf(changeRand);
-		String strChangeRand = i.toString();
 		// 0,2,5のどれかを、メソッドの結果として返す
-		return strChangeRand;
+		return changeRand;
 	}
 
 }
