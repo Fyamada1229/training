@@ -26,7 +26,7 @@ public class Main {
 	            throw new NumberFormatException("NumberFormatExceptionが発生しました、数字以外の文字が入っています");
 	        }
 	    }
-	    // 文字列以外が入っている場合の判定 Comparable比較可能」
+	    // 文字列以外が入っている場合の判定 「Comparable比較可能」
 	    Comparable<?> num = Integer.valueOf(1);
 	    if (result instanceof String == false && num instanceof Number) {
 	    	throw new NumberFormatException("NumberFormatExceptionが発生しました、整数が入っています");
