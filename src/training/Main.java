@@ -5,9 +5,15 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-	public static void main(String[] args) {
-		// argeには0が入っている
-		System.out.println(training03(args[0]));
+	public static void main(String[] args ) throws NumberFormatException, Exception {
+		try {
+			// argeには0が入っている
+			System.out.println(training03(args[0]));
+		} catch (NumberFormatException e) {
+			System.out.println(e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Exceptionが発生しました");
+		}
 	}
 	
 	public static String training03(String result) {
@@ -17,19 +23,16 @@ public class Main {
 	        Pattern pattern = Pattern.compile("^[0-9]+$");
 	        intResult = pattern.matcher(result).matches();
 	        if (intResult == false) {
-	            System.out.println("数字以外の値が入っています。0,2,5のどれかを入力して下さい。");
+	            throw new NumberFormatException("NumberFormatExceptionが発生しました、数字以外の文字が入っています");
 	        }
 	    }
-	    
-	    // 文字列以外が入ってきている場合の判定
+	    // 文字列以外が入っている場合の判定
 	    Comparable<?> num = Integer.valueOf(1);
 	    if (result instanceof String == false && num instanceof Number) {
-	    	System.out.println("整数が入っています。");
+	    	throw new NumberFormatException("NumberFormatExceptionが発生しました、整数が入っています");
 	    }
 	    
 	    int cpu = getComputer();
-	    System.out.println(result);
-	    System.out.println(cpu);
 	    
 	    // resultを整数にして比較する
 	    int changeNumResult = Integer.parseInt(result);	
