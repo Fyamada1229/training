@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args ) throws NumberFormatException, Exception {
 		try {
-			// argeには0が入っている
+			// argsの値は文字列の0が入っている
 			System.out.println(training03(args[0]));
 		} catch (NumberFormatException e) {
 			System.out.println(e.getMessage());
@@ -56,11 +56,11 @@ public class Main {
 	    // 条件 0 グー, 2チョキー, 5パー
 		if(changeNumResult == 0 && cpu == 2 || changeNumResult == 2 && cpu == 5 || changeNumResult == 5 && cpu == 0) {
 			result="勝ち";
-			}else if(changeNumResult == 0 && cpu == 0 || changeNumResult == 2 && cpu == 2 || changeNumResult == 5 && cpu == 5) {
+		} else if(changeNumResult == 0 && cpu == 0 || changeNumResult == 2 && cpu == 2 || changeNumResult == 5 && cpu == 5) {
 			result="あいこ";
-			}else {
+		} else {
 			result="まけ";
-			}
+		}
 
 		return result;
 	}
