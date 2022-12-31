@@ -32,7 +32,23 @@ public class Main {
 	    System.out.println(cpu);
 	    
 	    // resultを整数にして比較する
-	    int changeNumResult = Integer.parseInt(result);	 
+	    int changeNumResult = Integer.parseInt(result);	
+	    
+	    if (changeNumResult == 0) {
+	    	System.out.println("自分の手はグー");
+	    } else if (changeNumResult == 2) {
+	    	System.out.println("自分の手はチョキー");
+	    } else {
+	    	System.out.println("自分の手はパー");
+	    }
+	    
+	    if (cpu == 0) {
+	    	System.out.println("相手の手はグー");
+	    } else if (cpu == 2) {
+	    	System.out.println("相手の手はチョキー");
+	    } else {
+	    	System.out.println("相手の手はパー");
+	    }
 	    
 	    // 条件 0 グー, 2チョキー, 5パー
 		if(changeNumResult == 0 && cpu == 2 || changeNumResult == 2 && cpu == 5 || changeNumResult == 5 && cpu == 0) {
