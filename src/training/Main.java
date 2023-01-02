@@ -72,8 +72,8 @@ public class Main {
 		
 		while (changeRand == 1 || changeRand == 3 || changeRand == 4) {
 			double secoundRand = Math.random() * 5 + 1;
-			int number = (int)secoundRand;
-			if(number == 0 || number == 2 || number == 5) {
+			changeRand = (int)secoundRand;
+			if(changeRand == 0 || changeRand == 2 || changeRand == 5) {
 				break;
 			}
 		}
