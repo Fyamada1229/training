@@ -14,6 +14,7 @@ public class Main {
 		} catch (Exception e) {
 			System.out.println("Exceptionが発生しました");
 		}
+		
 	}
 	
 	public static String training03(String result) {
@@ -52,7 +53,7 @@ public class Main {
 	    } else {
 	    	System.out.println("相手の手はパー");
 	    }
-	    
+	
 	    // 条件 0 グー, 2チョキー, 5パー
 		if(changeNumResult == 0 && cpu == 2 || changeNumResult == 2 && cpu == 5 || changeNumResult == 5 && cpu == 0) {
 			result="勝ち";
@@ -60,6 +61,15 @@ public class Main {
 			result="あいこ";
 		} else {
 			result="まけ";
+		}
+		
+		if (result == "あいこ") {
+			System.out.println("あいこです。あいこでしょ！");
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 		return result;
